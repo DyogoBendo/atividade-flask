@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_migrate import Migrate
 from models import db
 from routes.user_bp import user_bp
+import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
