@@ -19,11 +19,9 @@
                 {% if user %}
                     <ul class="right hide-on-med-and-down">
                         <li>{{user.name}}</li>
-                    </ul>
-                    {% if user.writer %}
-                        <li>Escrever Post</li>
-                    {% endif %}
-                    <ul class="right hide-on-med-and-down">
+                        {% if user.writer %}
+                            <li>Escrever Post</li>
+                        {% endif %}
                         <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
                     </ul>                    
                 {% else %}
