@@ -7,19 +7,23 @@ db = SQLAlchemy()
 from datetime import date
 
 def store():    
-    form = request.form
-    title = form['title']
-    subtitle = form['subtitle']      
-    text = form['text']      
-    image = form['image']      
-    idUser = form['idUser']      
-    data = date.today()
-    
-    notice = Notice(title=title, subtitle=subtitle, text=text, image=image, id_user=idUser, date=data)
+    if request.method == 'POST':
 
-    db.session.add(notice)
-    db.session.commit()    
-    return redirect(url_for('user_bp.index'))
+        form = request.form
+        title = form['title']
+        subtitle = form['subtitle']      
+        text = form['text']      
+        image = form['image']      
+        idUser = form['idUser']      
+        data = date.today()
+        
+        notice = Notice(title=title, subtitle=subtitle, text=text, image=image, id_user=idUser, date=data)
+
+        db.session.add(notice)
+        db.session.commit()    
+        return redirect(url_for('user_bp.index'))
+    else:
+        render_template('create_notice')
 
 def show(noticeId):
     notice = Notice.query.filter_by(id=noticeId).first()
