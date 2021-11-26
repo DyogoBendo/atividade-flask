@@ -20,6 +20,9 @@
                     <ul class="right hide-on-med-and-down">
                         <li>{{username}}</li>
                     </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
+                    </ul>
                 {% else %}
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/login/">Entrar</a></li>
