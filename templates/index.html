@@ -16,9 +16,15 @@
             <div class="nav-wrapper">
                 <a href="./" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
                         alt="logo"></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="/login/">Entrar</a></li>
-                </ul>
+                {% if username %}
+                    <ul class="right hide-on-med-and-down">
+                        <li>{{username}}</li>
+                    </ul>
+                {% else %}
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/login/">Entrar</a></li>
+                    </ul>
+                {% endif %}
             </div>
         </nav>
     </div>

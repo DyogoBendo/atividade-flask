@@ -10,6 +10,7 @@ psycopg2 = "*"
 flask-sqlalchemy = "*"
 flask-script = "*"
 gunicorn = "*"
+flask-login = "*"
 
 [dev-packages]
 
