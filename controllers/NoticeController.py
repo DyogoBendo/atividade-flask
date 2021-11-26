@@ -23,7 +23,10 @@ def store():
         db.session.commit()    
         return redirect(url_for('user_bp.index'))
     else:
-        render_template('create_notice')
+        ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
+        username = current_user.username
+        user = {"username": username, "writer": username in ESCRITORES}
+        render_template('create_notice', user = user)
 
 def show(noticeId):
     notice = Notice.query.filter_by(id=noticeId).first()
