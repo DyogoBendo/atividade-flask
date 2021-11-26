@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Nows!</title>
+
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="./" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
+                        alt="logo"></a>
+                {% if user %}
+                <ul class="right hide-on-med-and-down">
+                    <li>{{user.name}}</li>
+                    {% if user.writer %}
+                    <li>Escrever Post</li>
+                    {% endif %}
+                    <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
+                </ul>
+                {% else %}
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/login/">Entrar</a></li>
+                </ul>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+    <div class="form-group">
+        <form class="col s12 form" action="{{url_for('notice_bp.store')}}" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Título" id="title" name="title" type="text" class="validate">
+                    <label for="title">Título</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="subtitle" type="text" name="subtitle" class="validate" placeholder="Subtitulo">
+                    <label for="subtitle">Subtitulo</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="image" type="text" name="image" class="validate" placeholder="Link da Imagem de Capa">
+                    <label for="image">Link da Imagem de Capa</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="text" type="text" name="text" class="validate" placeholder="Texto">
+                    <label for="text">Texto</label>
+                </div>            
+            <input id="idUser" type="hidden" name="idUser" value="{{user.username}}">                                                
+            <input class="btn waves-effect waves-light" type="submit" value="Submit">            
+        </div>
+    </form>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{url_for('static', filename='javascript/carousel.js')}}" type="module"></script>
+
+</html>

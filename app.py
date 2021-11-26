@@ -5,6 +5,7 @@ from routes.user_bp import user_bp
 from config import Config
 from flask_login import LoginManager
 from models import User
+from routes.notice_bp import notice_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -18,6 +19,7 @@ login_manager.login_view = 'login'
 login_manager.init_app(app)
 
 app.register_blueprint(user_bp, url_prefix='/users')
+app.register_blueprint(notice_bp, url_prefix='/notice')
 
 @login_manager.user_loader
 def load_user(user_id):
