@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from controllers.UserController import index, store, show, update, delete, logout
+from controllers.NotiiceController import index, store, show, update, delete, logout
 
 user_bp = Blueprint('user_bp', __name__)
 user_bp.route('/', methods=['GET'])(index)
