@@ -20,9 +20,12 @@
                     <ul class="right hide-on-med-and-down">
                         <li>{{username}}</li>
                     </ul>
+                    {% if username.writer %}
+                        <li>Escrever Post</li>
+                    {% endif %}
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
-                    </ul>
+                    </ul>                    
                 {% else %}
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/login/">Entrar</a></li>

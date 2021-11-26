@@ -9,7 +9,11 @@ db = SQLAlchemy()
 
 @login_required
 def index():
-    return render_template('index.html', username=current_user.username)
+    ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
+    username = current_user.username
+    user = {"username": username, "writer": username in ESCRITORES}
+
+    return render_template('index.html', user=user)
 
 
 def store():    
