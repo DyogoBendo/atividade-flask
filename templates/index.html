@@ -15,12 +15,12 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="./" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
-                        alt="logo"></a>
-                {% if username %}
+                        alt="logo"></a>                
+                {% if user %}
                     <ul class="right hide-on-med-and-down">
-                        <li>{{username}}</li>
+                        <li>{{user.name}}</li>
                     </ul>
-                    {% if username.writer %}
+                    {% if user.writer %}
                         <li>Escrever Post</li>
                     {% endif %}
                     <ul class="right hide-on-med-and-down">
