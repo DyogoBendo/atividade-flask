@@ -20,7 +20,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li>{{user.name}}</li>
                         {% if user.writer %}
-                            <li>Escrever Post</li>
+                            <li><a href="{{url_for('notice_bp.store')}}">Escrever Post</a></li>
                         {% endif %}
                         <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
                     </ul>                    
