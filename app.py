@@ -15,7 +15,12 @@ app.register_blueprint(user_bp, url_prefix='/users')
 
 @app.route('/')
 def index():
-    return "oii"    
+    return render_template("index.html")    
+
+@app.route("/login/")
+def login():
+    return render_template("login.html")
+
 
 
 if __name__ == '__main__':    

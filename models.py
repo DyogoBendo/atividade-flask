@@ -7,7 +7,7 @@ class User (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String)
     password = db.Column(db.String)
-
+    
     @property
     def serialize(self):
         return {

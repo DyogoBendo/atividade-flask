@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
+    <title>Nows!</title>
+
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{url_for('index')}}" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
+                        alt="logo"></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="form-group">
+        <form class="col s12 form" action="{{url_for('user_bp.store')}}" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Nome de Usuário" id="username" name="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="password" type="password" name="password" class="validate" placeholder="Senha">
+                    <label for="password">Senha</label>
+                </div>
+            </div>
+            <input class="btn waves-effect waves-light" type="submit" value="Submit">            
+        </div>
+    </form>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{{url_for('static', filename='javascript/carousel.js')}}" type="module"></script>
+
+</html>
