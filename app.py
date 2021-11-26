@@ -2,10 +2,10 @@ from flask import Flask, render_template
 from flask_migrate import Migrate
 from models import db
 from routes.user_bp import user_bp
-import os
+from config import Config
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+app.config.from_object(Config)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
