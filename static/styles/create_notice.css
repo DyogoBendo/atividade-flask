@@ -6,14 +6,9 @@
 
 .form{
     width: 50%;
-    margin: 0;
-    padding: 0;
+    margin: 0;    
 }
 
 .form > .row{
     width: 100vw;
-}
-
-label {
-    margin-bottom: 1rem;
 }
