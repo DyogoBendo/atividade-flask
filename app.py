@@ -3,8 +3,8 @@ from flask_migrate import Migrate
 from models import db
 from routes.user_bp import user_bp
 from config import Config
-from flask_login import LoginManager
-from models import User
+from flask_login import LoginManager, current_user
+from models import User, Notice
 from routes.notice_bp import notice_bp
 
 app = Flask(__name__)
@@ -29,7 +29,16 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return render_template("index.html")    
+    ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
+    username = current_user.username
+    user = {"username": username, "writer": username in ESCRITORES}
+    notices = Notice.query.all()
+
+    object = {
+        user: user,
+        notices: notices
+    }
+    return render_template("index.html", object=object)    
 
 @app.route("/login/")
 def login():

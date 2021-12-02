@@ -7,15 +7,6 @@ from flask_login import login_user, login_required, current_user, logout_user
 db = SQLAlchemy()
 
 
-@login_required
-def index():
-    ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
-    username = current_user.username
-    user = {"username": username, "writer": username in ESCRITORES}
-
-    return render_template('index.html', user=user)
-
-
 def store():    
     form = request.form
     username = form['username']
@@ -35,7 +26,7 @@ def store():
     db.session.commit()
 
     login_user(user, remember=False)
-    return redirect(url_for('user_bp.index'))
+    return redirect(url_for('index'))
 
 @login_required
 def logout():
