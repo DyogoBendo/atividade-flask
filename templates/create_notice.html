@@ -38,25 +38,25 @@
         <form class="col s12 form" action="{{url_for('notice_bp.store')}}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Título" id="title" name="title" type="text" class="validate">
+                    <input id="title" name="title" type="text" class="validate">
                     <label for="title">Título</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="subtitle" type="text" name="subtitle" class="validate" placeholder="Subtitulo">
+                    <input id="subtitle" type="text" name="subtitle" class="validate">
                     <label for="subtitle">Subtitulo</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="image" type="text" name="image" class="validate" placeholder="Link da Imagem de Capa">
+                    <input id="image" type="text" name="image" class="validate">
                     <label for="image">Link da Imagem de Capa</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="text" type="text" name="text" class="validate" placeholder="Texto">
+                    <input id="text" type="text" name="text" class="validate">
                     <label for="text">Texto</label>
                 </div>    
             <input id="idUser" type="hidden" name="idUser" value="{{user.username}}">   
