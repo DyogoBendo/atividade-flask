@@ -26,7 +26,7 @@ class Notice (db.Model):
     subtitle = db.Column(db.Text)
     text = db.Column(db.Text)
     date = db.Column(db.Date)
-    id_user = db.Column(db.Integer, db.ForeignKey("user.id"))
+    id_user = db.Column(db.Integer, db.ForeignKey("user.id"))    
 
     @property
     def serialize(self):

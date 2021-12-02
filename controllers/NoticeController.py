@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_user, login_required, current_user, logout_user
 db = SQLAlchemy()
 from datetime import date
+ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
 
 def store():    
     if request.method == 'POST':
@@ -22,12 +23,22 @@ def store():
         db.session.add(notice)
         db.session.commit()    
         return redirect(url_for('user_bp.index'))
-    else:        
-        ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
+    else:                
         username = current_user.username
         user = {"username": username, "writer": username in ESCRITORES}
         return render_template('create_notice.html', user = user)
 
-def show(notice_id):
+def show(notice_id):    
     notice = Notice.query.filter_by(id=notice_id).first()
-    return render_template('show_notice.html', notice=notice)    
+    try:
+        username = current_user.username
+        user = {"username": username, "writer": username in ESCRITORES}
+    except:
+        user = ''
+
+    object = {
+        "user": user,
+        "notice": notice
+    }
+
+    return render_template('show_notice.html', object=object)    
