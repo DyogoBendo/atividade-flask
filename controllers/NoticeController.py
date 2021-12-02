@@ -23,7 +23,7 @@ def store():
 
         db.session.add(notice)
         db.session.commit()    
-        return redirect(url_for('user_bp.index'))
+        return redirect(url_for('index'))
     else:                
         username = current_user.username
         user = {"username": username, "writer": username in ESCRITORES}
