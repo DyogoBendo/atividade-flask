@@ -1,15 +1,11 @@
-.notices{
+.noticias{
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nav-wrapper > a{
+nav > a{
     margin: 0;
     padding: 0;
-}
-
-body{
-    background-color: blue;
 }
