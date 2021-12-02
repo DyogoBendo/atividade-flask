@@ -33,9 +33,11 @@
     </div>
 
     <main>
-        <h1>{{object.notice.title}}</h1>
-        <h2>{{object.notice.id_user}}</h2>
-        <h2>{{object.author.username}}</h2>
+        <h1>{{object.notice.title}}</h1> 
+        <div class="autor-data">
+            <h5>{{object.author.username}}</h2>
+            <h5>{{object.notice.date}}</h5>
+        </div>       
         <img src="{{object.notice.image}}" alt="imagem de capa">
         <h5>{{object.notice.subtitle}}</h5>
         <div class="text">
