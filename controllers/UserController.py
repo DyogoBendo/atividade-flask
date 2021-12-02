@@ -17,7 +17,7 @@ def store():
     if user:
         if user.password == password:
             login_user(user, remember=False)
-            return redirect(url_for('user_bp.index'))
+            return redirect(url_for('index'))
         else:            
             return redirect(url_for('login'))         
     user = User(username=username, password=password)
