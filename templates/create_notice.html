@@ -32,24 +32,35 @@
         </nav>
     </div>
     <div class="form-group">
-        <form class="col s12 form" action="{{url_for('user_bp.store')}}" method="post" enctype="multipart/form-data">
+        <form class="col s12 form" action="{{url_for('notice_bp.store')}}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Nome de Usuário" id="username" name="username" type="text" class="validate">
-                    <label for="username">Username</label>
+                    <input placeholder="Título" id="title" name="title" type="text" class="validate">
+                    <label for="title">Título</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="password" type="password" name="password" class="validate" placeholder="Senha">
-                    <label for="password">Senha</label>
+                    <input id="subtitle" type="text" name="subtitle" class="validate" placeholder="Subtitulo">
+                    <label for="subtitle">Subtitulo</label>
                 </div>
             </div>
             <div class="row">
-                <input class="btn waves-effect waves-light" type="submit" value="Entrar">            
+                <div class="input-field col s6">
+                    <input id="image" type="text" name="image" class="validate" placeholder="Link da Imagem de Capa">
+                    <label for="image">Link da Imagem de Capa</label>
+                </div>
             </div>
-        </div>
-    </form>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="text" type="text" name="text" class="validate" placeholder="Texto">
+                    <label for="text">Texto</label>
+                </div>
+            </div>                
+            <div class="row">
+                <input class="btn waves-effect waves-light" type="submit" value="Criar">            
+            </div>                    
+        </form>    
     </div>
 
 </body>
