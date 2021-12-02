@@ -30,10 +30,13 @@ def load_user(user_id):
 @app.route('/')
 def index():
     ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
-    username = current_user.username
-    user = {"username": username, "writer": username in ESCRITORES}
-    notices = Notice.query.all()
+    try:
+        username = current_user.username
+        user = {"username": username, "writer": username in ESCRITORES}
+    except:
+        user = ''
 
+    notices = Notice.query.all()
     object = {
         "user": user,
         "notices": notices
