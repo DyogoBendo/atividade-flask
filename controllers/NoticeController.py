@@ -1,6 +1,6 @@
 import sys
 from flask import render_template, redirect, url_for, request, abort
-from models import Notice
+from models import Notice, User
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_user, login_required, current_user, logout_user
 db = SQLAlchemy()
@@ -14,7 +14,7 @@ def store():
         subtitle = form['subtitle']      
         text = form['text']      
         image = form['image']      
-        idUser = form['idUser']      
+        idUser = User.query.filter_by(username=form['idUser']).first().id
         data = date.today()
         
         notice = Notice(title=title, subtitle=subtitle, text=text, image=image, id_user=idUser, date=data)
