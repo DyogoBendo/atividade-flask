@@ -2,9 +2,9 @@
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 24px;    
+    margin: 0 1rem;
 }
 
 .noticias .card{    
-    height: 30rem;
-    margin-left: 2rem;
+    height: 30rem;    
 }
