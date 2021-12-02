@@ -9,7 +9,7 @@ main {
 }
 
 .autor-data {
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-between;    
 }
