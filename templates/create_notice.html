@@ -19,9 +19,9 @@
                 <img src="{{url_for('static', filename='images/logo_nows.png')}}" alt="logo hide-on-med-and-down">
             </a>
             <ul class="right hide-on-med-and-down">                    
-                {% if object.user %}
-                    <li>{{object.user.name}}</li>
-                    {% if object.user.writer %}
+                {% if user %}
+                    <li>{{user.name}}</li>
+                    {% if user.writer %}
                         <li><a href="{{url_for('notice_bp.store')}}">Escrever Post</a></li>
                     {% endif %}
                         <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
