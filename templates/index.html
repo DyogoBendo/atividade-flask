@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/login.css')}}">
     <title>Nows!</title>
 
 </head>
@@ -33,25 +34,24 @@
         </nav>
     </div>
 
-    {% for notice in object.notices %}
-        <div class="col s12 m7">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{notice.image}}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title">{{notice.title}}</span>
-                    <p>{{notice.subtitle}}</p>
-                    <p>{{notice.date}}</p>
-                </div>
-                <div class="card-action">
-                    <a href="{{url_for('notice_bp.show', notice_id=notice.id)}}">Read</a>
+    <div class="noticias">
+        {% for notice in object.notices %}
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{notice.image}}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">{{notice.title}}</span>
+                        <p>{{notice.subtitle}}</p>
+                        <p>{{notice.date}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{url_for('notice_bp.show', notice_id=notice.id)}}">Read</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-    </div>
-    </div>
+        {% endfor %}
     </div>
 
 </body>
