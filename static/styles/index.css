@@ -1,11 +1,10 @@
 .noticias{    
     display: grid; 
-    grid-template-columns: 1fr 1fr; /*Duas colunas de tamnho flexivel, podia ser repeat(2, 1fr)*/
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 24px;    
 }
 
-.noticias .card{
-    width: 20rem;    
+.noticias .card{    
     height: 30rem;
     margin-left: 2rem;
 }
