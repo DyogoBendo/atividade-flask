@@ -6,41 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/show_notice.css')}}">
     <title>Nows!</title>
 
 </head>
 
 <body>
     <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="./" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
-                        alt="logo"></a>
-                {% if user %}
-                <ul class="right hide-on-med-and-down">
-                    <li>{{user.name}}</li>
-                    {% if user.writer %}
-                    <li>Escrever Post</li>
+        <nav>               
+            <a href="{{url_for('index')}}">
+                <img src="{{url_for('static', filename='images/logo_nows.png')}}" alt="logo hide-on-med-and-down">
+            </a>
+            <ul class="right hide-on-med-and-down">                    
+                {% if object.user %}
+                    <li>{{object.user.name}}</li>
+                    {% if object.user.writer %}
+                        <li><a href="{{url_for('notice_bp.store')}}">Escrever Post</a></li>
                     {% endif %}
-                    <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
-                </ul>
+                        <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
                 {% else %}
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="/login/">Entrar</a></li>
-                </ul>
+                    <li><a href="{{url_for('login')}}">Entrar</a></li>
                 {% endif %}
-            </div>
+            </ul>            
         </nav>
     </div>
 
-    <h1>{{notice.title}}</h1>
-    <span>{{notice.id_user}}</span>
-    <img src="{{notice.image}}" alt="imagem de capa">
-    <h2>{{notice.subtitle}}</h2>
-
-    <p>
-        {{notice.text}}
-    </p>
+    <main>
+        <h1>{{notice.title}}</h1>
+        <span>{{notice.id_user}}</span>
+        <img src="{{notice.image}}" alt="imagem de capa">
+        <h3>{{notice.subtitle}}</h3>
+    
+        <p>
+            {{notice.text}}
+        </p>
+    </main>
 
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
