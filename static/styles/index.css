@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-.nav-wrapper > img{
+.nav-wrapper > a{
     margin: 0;
-    padding: 10;
+    padding: 0;
 }
