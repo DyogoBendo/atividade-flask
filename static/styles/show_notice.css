@@ -3,3 +3,7 @@ main {
     align-items: center; 
     flex-direction: column;
 }
+
+.text{
+    width: 70%;
+}
