@@ -1,8 +1,7 @@
 .noticias{    
-    display: flex;
-    justify-content: center;  
-    flex-direction: column;
-    padding: 1rem;  
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /*Duas colunas de tamnho flexivel, podia ser repeat(2, 1fr)*/
+    grid-gap: 24px;    
 }
 
 .noticias .card{
