@@ -2,7 +2,7 @@
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 24px;    
-    margin: 0 1rem;
+    margin: 3rem;
 }
 
 .noticias .card{    
