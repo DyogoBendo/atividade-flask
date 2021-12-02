@@ -7,6 +7,7 @@ db = SQLAlchemy()
 from datetime import date
 ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
 
+@login_required
 def store():    
     if request.method == 'POST':
 
@@ -15,7 +16,7 @@ def store():
         subtitle = form['subtitle']      
         text = form['text']      
         image = form['image']      
-        idUser = User.query.filter_by(username=form['idUser']).first().id
+        idUser = User.query.filter_by(username=current_user.username).first().id
         data = date.today()
         
         notice = Notice(title=title, subtitle=subtitle, text=text, image=image, id_user=idUser, date=data)
