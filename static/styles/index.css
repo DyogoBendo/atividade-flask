@@ -1,5 +1,4 @@
-.noticias{
-    width: 80%;
+.noticias{    
     display: flex;
     justify-content: center;    
 }
@@ -12,6 +11,6 @@
     margin: 0;
 }
 .noticias .card{
-    width: 200px;
-    height: 500px;
+    width: 20rem;
+    height: 100%;
 }
