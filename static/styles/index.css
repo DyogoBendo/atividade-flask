@@ -1,6 +1,7 @@
 .noticias{    
     display: flex;
-    justify-content: center;    
+    justify-content: center;  
+    padding: 1rem;  
 }
 
 .icone{
@@ -11,6 +12,6 @@
     margin: 0;
 }
 .noticias .card{
-    width: 20rem;
-    height: 100%;
+    width: 20rem;    
+    height: 25rem;
 }
