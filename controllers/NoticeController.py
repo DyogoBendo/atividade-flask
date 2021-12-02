@@ -28,6 +28,6 @@ def store():
         user = {"username": username, "writer": username in ESCRITORES}
         return render_template('create_notice.html', user = user)
 
-def show(notide_id):
-    notice = Notice.query.filter_by(id=notide_id).first()
+def show(notice_id):
+    notice = Notice.query.filter_by(id=notice_id).first()
     return render_template('show_notice.html', notice=notice)    
