@@ -26,7 +26,7 @@ def store():
         ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
         username = current_user.username
         user = {"username": username, "writer": username in ESCRITORES}
-        render_template('create_notice', user = user)
+        render_template('create_notice.html', user = user)
 
 def show(noticeId):
     notice = Notice.query.filter_by(id=noticeId).first()
