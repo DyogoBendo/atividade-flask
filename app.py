@@ -35,8 +35,8 @@ def index():
     notices = Notice.query.all()
 
     object = {
-        user: user,
-        notices: notices
+        "user": user,
+        "notices": notices
     }
     return render_template("index.html", object=object)    
 
