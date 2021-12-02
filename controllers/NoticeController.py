@@ -30,7 +30,7 @@ def store():
 
 def show(notice_id):    
     notice = Notice.query.filter_by(id=notice_id).first()    
-    author = Notice.query.filter_by(id=notice.id_user).first()
+    author = User.query.filter_by(id=notice.id_user).first()
     try:
         username = current_user.username
         user = {"username": username, "writer": username in ESCRITORES}
