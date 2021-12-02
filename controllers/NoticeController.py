@@ -30,6 +30,7 @@ def store():
 
 def show(notice_id):    
     notice = Notice.query.filter_by(id=notice_id).first()
+    author = Notice.query.filter_by(id=notice.id_user).first()
     try:
         username = current_user.username
         user = {"username": username, "writer": username in ESCRITORES}
@@ -38,7 +39,8 @@ def show(notice_id):
 
     object = {
         "user": user,
-        "notice": notice
+        "notice": notice,
+        "author": author
     }
 
     return render_template('show_notice.html', object=object)    
