@@ -14,19 +14,21 @@
 
 <body>
     <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="./" class="brand-logo"><img src="{{url_for('static', filename='images/logo_nows.png')}}"
-                        alt="logo"></a>
-                {% if user %}
-                <ul class="right hide-on-med-and-down">
-                    <li>{{user.name}}</li>
-                    {% if user.writer %}
-                    <li>Escrever Post</li>
+        <nav>               
+            <a href="{{url_for('index')}}">
+                <img src="{{url_for('static', filename='images/logo_nows.png')}}" alt="logo hide-on-med-and-down">
+            </a>
+            <ul class="right hide-on-med-and-down">                    
+                {% if object.user %}
+                    <li>{{object.user.name}}</li>
+                    {% if object.user.writer %}
+                        <li><a href="{{url_for('notice_bp.store')}}">Escrever Post</a></li>
                     {% endif %}
-                    <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
-                </ul>                
-            </div>
+                        <li><a href="{{url_for('user_bp.logout')}}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{url_for('login')}}">Entrar</a></li>
+                {% endif %}
+            </ul>            
         </nav>
     </div>
     <div class="form-group">
