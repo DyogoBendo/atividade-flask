@@ -17,3 +17,4 @@
 
 7) Para realizar o deploy do sistema, foi necessário primeiramente fazê-lo, utilizando Python, HTML, CSS, com a ferramenta VsCode. Após colocar o sistema em um repositório no GitHub, bastou então criar uma conta no Heroku e sincronizar o repositório com um projeto no Heroku, então já estava disponível para acessar na web. 
 
+8) https://nanows.herokuapp.com
