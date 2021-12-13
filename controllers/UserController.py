@@ -3,8 +3,10 @@ from flask import render_template, redirect, url_for, request, abort
 from flask.helpers import flash
 from models import User
 from flask_login import login_user, login_required, current_user, logout_user
-from __main__ import db
+from flask_sqlalchemy import SQLAlchemy
+# from __main__ import db
 
+db = SQLAlchemy()
 
 def store():    
     form = request.form

@@ -2,9 +2,12 @@ import sys
 from flask import render_template, redirect, url_for, request, abort
 from models import Notice, User
 from flask_login import login_user, login_required, current_user, logout_user
-from __main__ import db
+# from __main__ import db
+from flask_sqlalchemy import SQLAlchemy
 from datetime import date
 ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
+
+db = SQLAlchemy()
 
 @login_required
 def store():    
