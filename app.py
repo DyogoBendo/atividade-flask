@@ -1,11 +1,9 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
 from models import db
-from routes.user_bp import user_bp
 from config import Config
 from flask_login import LoginManager, current_user
 from models import User, Notice
-from routes.notice_bp import notice_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -13,6 +11,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 migrate = Migrate(app, db)
+
+from routes.user_bp import user_bp
+from routes.notice_bp import notice_bp
 
 login_manager = LoginManager()
 login_manager.login_view = 'login'

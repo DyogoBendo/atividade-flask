@@ -2,9 +2,8 @@ import sys
 from flask import render_template, redirect, url_for, request, abort
 from flask.helpers import flash
 from models import User
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_user, login_required, current_user, logout_user
-db = SQLAlchemy()
+from __main__ import db
 
 
 def store():    
