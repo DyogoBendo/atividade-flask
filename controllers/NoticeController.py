@@ -47,6 +47,7 @@ def show(notice_id):
     return render_template('show_notice.html', object=object)    
 
 def delete(notice_id):
-    Notice.query.filter_by(id=notice_id).delete()
+    notice = Notice.query.filter_by(id=notice_id).first()
+    db.session.delete(notice)
     db.session.commit()    
     return redirect(url_for('index'))
