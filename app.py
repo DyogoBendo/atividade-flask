@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
-from models import db
+from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_login import LoginManager, current_user
 from models import User, Notice
@@ -9,6 +9,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy()
 db.init_app(app)
 migrate = Migrate(app, db)
 
