@@ -1,10 +1,12 @@
 import sys
-from flask import render_template, redirect, url_for, request, abort
+from flask import render_template, redirect, url_for, request, abort, Flask
 from flask.helpers import flash
 from models import User
 from flask_login import login_user, login_required, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
-from ..app import app
+app = Flask(__name__)
+app.config.from_object(Config)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 

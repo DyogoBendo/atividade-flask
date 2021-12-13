@@ -1,8 +1,10 @@
 import sys
-from flask import render_template, redirect, url_for, request, abort
+from flask import render_template, redirect, url_for, request, abort, Flask
 from models import Notice, User
 from flask_login import login_user, login_required, current_user, logout_user
-from ..app import app
+app = Flask(__name__)
+app.config.from_object(Config)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
 ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
