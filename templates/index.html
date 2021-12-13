@@ -43,11 +43,13 @@
                     <p>{{notice.subtitle}}</p>
                     <p>{{notice.date}}</p>
                 </div>
+                {% if object.user.id == notice.id_user%}
+                    <div class="class-action">
+                        <a href="{{url_for('notice_bp.delete', notice_id=notice.id)}}"><img src="{{url_for('static', filename='images/bin.png')}}" alt="lixeira"></a>
+                    </div>
+                {% endif %}
                 <div class="card-action">
-                    <a href="{{url_for('notice_bp.show', notice_id=notice.id)}}">Read</a>
-                    {% if object.user.id == notice.id_user%}
-                    <a href="{{url_for('notice_bp.delete', notice_id=notice.id)}}"><img src="{{url_for('static', filename='images/bin.png')}}" alt="lixeira"></a>
-                    {% endif %}
+                    <a href="{{url_for('notice_bp.show', notice_id=notice.id)}}">Read</a>                
                 </div>
             </div>            
         {% endfor %}
