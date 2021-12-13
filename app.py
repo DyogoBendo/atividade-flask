@@ -13,12 +13,13 @@ db = SQLAlchemy()
 db.init_app(app)
 migrate = Migrate(app, db)
 
-from routes.user_bp import user_bp
-from routes.notice_bp import notice_bp
 
 login_manager = LoginManager()
 login_manager.login_view = 'login'
 login_manager.init_app(app)
+
+from routes.user_bp import user_bp
+from routes.notice_bp import notice_bp
 
 app.register_blueprint(user_bp, url_prefix='/users')
 app.register_blueprint(notice_bp, url_prefix='/notice')

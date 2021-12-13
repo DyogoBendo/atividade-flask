@@ -4,9 +4,9 @@ from flask.helpers import flash
 from models import User
 from flask_login import login_user, login_required, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
-# from __main__ import db
+from __main__ import app
 
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 def store():    
     form = request.form
