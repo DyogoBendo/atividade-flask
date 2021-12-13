@@ -48,4 +48,5 @@ def show(notice_id):
 
 def delete(notice_id):
     Notice.query.filter_by(id=notice_id).delete()
+    db.session.commit()    
     return redirect(url_for('index'))
