@@ -4,7 +4,7 @@ from flask.helpers import flash
 from models import User
 from flask_login import login_user, login_required, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
-from __main__ import app
+from ..app import app
 
 db = SQLAlchemy(app)
 
