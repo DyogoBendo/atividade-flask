@@ -16,7 +16,7 @@
     <div class="navbar-fixed">
         <nav>               
             <a href="{{url_for('index')}}">
-                <img src="{{url_for('static', filename='images/logo_nows.png')}}" alt="logo hide-on-med-and-down">
+                <img src="{{url_for('static', filename='images/logo_nows.png')}}" class="logo hide-on-med-and-down">
             </a>
             <ul class="right hide-on-med-and-down">                    
                 {% if object.user %}
@@ -45,6 +45,9 @@
                 </div>
                 <div class="card-action">
                     <a href="{{url_for('notice_bp.show', notice_id=notice.id)}}">Read</a>
+                    {% if object.user.id == notice.id_user%}
+                    <a href="{{url_for('notice_bp.delete', notice_id=notice.id)}}"><img src="{{url_for('static', filename='images/bin.png')}}" alt="lixeira"></a>
+                    {% endif %}
                 </div>
             </div>            
         {% endfor %}

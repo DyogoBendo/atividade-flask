@@ -32,7 +32,7 @@ def index():
     ESCRITORES = ["alana", "dyogo", "jefferson", "nikoly", "jimenez", "deivid"]
     try:
         username = current_user.username
-        user = {"username": username, "writer": username in ESCRITORES}
+        user = {"username": username, "writer": username in ESCRITORES, 'id': current_user.id}
     except:
         user = ''
 
